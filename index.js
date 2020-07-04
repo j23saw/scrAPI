@@ -35,11 +35,11 @@ async function scrapeLyrics(u, song){
       })
       const seperatedNotes = await notes.map(noteline => noteline.match(regex))
       browser.close()
-      return await {filteredLyrics, r, seperatedNotes, success: 1, notes}
+      return await {filteredLyrics, noteChangePoints, seperatedNotes, success: 1, notes}
     } 
     catch (error) {
       console.error(error)
-      return await {filteredLyrics:[], r:[], seperatedNotes:[], success: 0, notes:[]}
+      return await {filteredLyrics:[], noteChangePoints:[], seperatedNotes:[], success: 0, notes:[]}
     }
 }
 
