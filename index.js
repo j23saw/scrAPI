@@ -38,7 +38,9 @@ async function scrapeLyrics(u, song){
       return await {filteredLyrics, r, seperatedNotes, success: 1, notes}
     } 
     catch (error) {
+      console.error(error)
       return await {filteredLyrics:[], r:[], seperatedNotes:[], success: 0, notes:[]}
+      
     }
 }
 
