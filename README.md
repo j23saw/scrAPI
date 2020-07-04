@@ -1,8 +1,8 @@
 # scrAPI
 REST API implementation for scraping and returning Lyrics and Octave Notes for the queried song from https://www.pianodaddy.com using Express and Node.js!
 
-Endpoint: https://ly8api.herokuapp.com/{song-name}
-    > Returns a JSON object {filteredLyrics, noteChangePoints, seperatedNotes, success, notes}
+Endpoint: https://ly8api.herokuapp.com/{song-name}\n
+    > Returns a JSON object {filteredLyrics, noteChangePoints, seperatedNotes, success, notes}\n
         > filteredLyrics: Type = Array
             Each element is a single lyric line of that queried song. If the request fails, returns an empty array [].
         > noteChangePoints: Type = Array
