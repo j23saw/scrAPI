@@ -18,7 +18,7 @@ app.get('/:query', async function(req, res, next) {
 
 async function scrapeLyrics(u, song){
     try {
-      const browser = await puppeteer.launch()
+      const browser = await puppeteer.launch({ args: ['--no-sandbox'] })
       const page = await browser.newPage()
       await page.goto(url);
       await page.type('#cse-search-box > div:nth-child(1) > input:nth-child(3)', song)
@@ -40,7 +40,6 @@ async function scrapeLyrics(u, song){
     catch (error) {
       console.error(error)
       return await {filteredLyrics:[], r:[], seperatedNotes:[], success: 0, notes:[]}
-      
     }
 }
 
