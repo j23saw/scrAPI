@@ -9,6 +9,9 @@ app.use(cors())
 
 let port = process.env.PORT || 5000;  
 
+app.get('/', (req, res) => {
+  res.send("HELLO WORLD")
+})
 app.get('/:query', async function(req, res, next) {
     res.send(await scrapeLyrics(url, req.params.query));
 })
