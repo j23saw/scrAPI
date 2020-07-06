@@ -29,7 +29,7 @@ async function scrapeLyrics(u, song){
       const notes = await page.$$eval('#tablist1-panel1 > span', el => el.map(e => e.textContent)).catch(err => void 0);   
       const lyrics = await page.$eval('#tablist1-panel1', el => el.innerText.split("\n").filter(l => (l !== "")));
       const filteredLyrics = await lyrics.filter(g => !notes.includes(g))
-      const r = await filteredLyrics.map(line => {
+      const noteChangePoints = await filteredLyrics.map(line => {
         let l = rita.RiTa.stripPunctuation(line)
         return rita.RiTa.getSyllables(l)
       })
